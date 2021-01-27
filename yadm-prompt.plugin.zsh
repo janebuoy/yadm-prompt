@@ -1,10 +1,3 @@
-# The yadm prompt's yadm commands are read-only and should not interfere with
-# other processes. This environment variable is equivalent to running with `yadm
-# --no-optional-locks`, but falls back gracefully for older versions of yadm.
-# See yadm(1) for and yadm-status(1) for a description of that flag.
-#
-# We wrap in a local function instead of exporting the variable directly in
-# order to avoid interfering with manually-run yadm commands by the user.
 function __yadm_prompt_yadm() {
   YADM_OPTIONAL_LOCKS=0 command yadm "$@"
 }
